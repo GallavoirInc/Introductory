@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hallucination</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Be+Vietnam+Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lovers+Quarrel">
+</head>
+
+<body>
+    <div class="menu-bar">
+        <div class="dropdown">
+            <div class="menu-icon" id="menuToggle">☰</div>
+            <div class="dropdown-content" id="dropdownMenu">
+                <a href="index.html">Home</a>
+                <a href="#">Projects</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="title">Hallucination</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search (doesn't work yet)">
+            <button type="submit">🔍</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Hallucination</h1>
+            <p>For now I need somewhere to design and experiment with building webpages... again.</p>
+        </div>
+
+        <div class="content">
+            <div class="content-left">
+                <h2>A product by and for Gallavoir Inc. </h2>
+                <blockquote>Tập đoàn ổ nhóm công ty hai thành viên chuyên xử lí tác phẩm tranh truyện (không lành mạnh cho lắm) ngoại ngữ (đa phần từ Tiếng Anh). <br><br>
+                    An idiotic duo operating a company-group-gang specialized in scanlating (not really safe for work) comics from foreign language for Vietnamese (mainly from English).</blockquote>
+            </div>
+            <div class="content-right">
+                <img src="img/PXL_20231008_143758714.jpg" title="demo" alt="demo">
+            </div>
+        </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the menu toggle button and dropdown
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        // Toggle dropdown when menu icon is clicked
+        menuToggle.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('#menuToggle')) {
+                if (dropdownMenu.classList.contains('show')) {
+                    dropdownMenu.classList.remove('show');
+                }
+            }
+        });
+    });
+</script>
+
+</html>

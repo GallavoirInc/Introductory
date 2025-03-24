@@ -1,0 +1,133 @@
+.header h1 {
+    font-family: "Lovers Quarrel", cursive;
+    font-size: 4em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+/* Menu Bar Styles */
+.menu-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers items horizontally */
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* If you want the menu icon on the far left, title centered, and search on the right */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+    position: relative;
+    margin-right: auto; /* Pushes it to the left */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 101;
+    top: 100%;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+/* Show class will be toggled with JavaScript */
+.show {
+    display: block;
+}
+
+
+.title {
+    font-size: 20px;
+    position: fixed;
+    /* Remove margin-right if you want it perfectly centered */
+}
+
+
+.search-bar {
+    display: flex;
+    max-width: 400px;
+    margin-left: auto; /* Pushes it to the right */
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid darkgray;
+    border-right-width: 0;
+}
+
+.search-bar button {
+    background-color: darkgray;
+    color: darkgray;
+    border: 1px solid darkgray;
+    border-left-width: 0;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #45a049;
+}
+
+/* Container Styles */
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Content Styles */
+.content {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens if needed */
+}
+
+.content-left {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px 20px 10px 10px; /* Add more padding to right side */
+    border-right: 1px solid white; /* Add separation line */
+}
+
+.content-right {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 20px; /* Add more padding to left side */
+}
+
+.content-right img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
