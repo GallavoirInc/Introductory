@@ -1,3 +1,9 @@
+html {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
+    position: relative;
+}
+
 .header h1 {
     font-family: "Lovers Quarrel", cursive;
     font-size: 4em;
@@ -9,13 +15,19 @@ body {
     background-color: black;
     color: white;
     font-family: "Be Vietnam Pro", sans-serif;
+
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%;
+    position: relative;
 }
 
 /* Menu Bar Styles */
 .menu-bar {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center; /* Centers items horizontally */
+    justify-content: space-between; /* Centers items horizontally */
+
     background-color: black;
     color: white;
     padding: 10px 10px;
@@ -31,8 +43,7 @@ body {
     font-size: 24px;
     cursor: pointer;
     margin-right: 20px;
-    position: relative;
-    margin-right: auto; /* Pushes it to the left */
+    position: relative; /* Pushes it to the left */
 }
 
 .dropdown {
@@ -70,22 +81,24 @@ body {
 
 .title {
     font-size: 20px;
-    position: fixed;
+    position: relative;
     /* Remove margin-right if you want it perfectly centered */
 }
 
 
 .search-bar {
     display: flex;
-    max-width: 400px;
+    max-width: 200px; /* Reduced from 400px */
     margin-left: auto; /* Pushes it to the right */
 }
 
 .search-bar input {
     flex: 1;
+    min-width: 128px; /* Ensure minimum width */
     padding: 8px;
     border: 1px solid darkgray;
     border-right-width: 0;
+    text-overflow: ellipsis; /* Add ellipsis for text overflow */
 }
 
 .search-bar button {
@@ -130,4 +143,158 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
+    object-fit: contain;
 }
+
+/* Base styles (already in your CSS) */
+
+/* Small devices (portrait phones) */
+@media (max-width: 576px) {
+    .content {
+      flex-direction: column;
+    }
+    
+    .content-left, 
+    .content-right {
+      width: 100%;
+      padding: 10px;
+    }
+    
+    .content-left {
+      border-right: none;
+      border-bottom: 1px solid white;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      position: relative; /* Fix positioning issue on mobile */
+      font-size: 18px;
+    }
+    
+    .search-bar {
+      max-width: 120px;
+      margin-left: 5px; /* Reduced margin */
+    }
+    
+    .search-bar input {
+      padding: 6px 4px; /* Smaller and asymmetric padding */
+      font-size: 12px; /* Smaller font size */
+      width: 80px; /* Explicit width */
+    }
+    
+    .search-bar button {
+      padding: 6px; /* Smaller button */
+    }
+    
+    .header h1 {
+      font-size: 3em;
+    }
+
+    .menu-bar {
+        padding: 5px;
+    }
+    
+    .search-bar {
+        max-width: 120px; /* Make search bar smaller on mobile */
+    }
+    
+    .search-bar input {
+        width: 100%; /* Make input take available width */
+        font-size: 14px; /* Smaller font size */
+    }
+    
+    .container {
+        width: 95%; /* Increase container width slightly */
+        margin: 10px auto;
+    }
+
+
+  }
+  
+  /* Medium devices (landscape phones, tablets) */
+  @media (min-width: 577px) and (max-width: 768px) {
+    .title {
+      position: relative;
+    }
+    
+    .search-bar {
+      max-width: 128px;
+    }
+    
+    .search-bar input {
+      width: 120px;
+      font-size: 13px; /* Slightly smaller font */
+      padding: 8px 5px; /* Adjusted padding */
+    }
+  }
+  
+  /* Orientation specific styles */
+  @media (orientation: portrait) {
+    .menu-bar {
+      padding: 5px;
+    }
+    
+    .menu-icon {
+      font-size: 20px;
+    }
+  }
+  
+  @media (orientation: landscape) and (max-height: 500px) {
+    /* Optimize for landscape on phones */
+    .header {
+      margin-top: 5px;
+    }
+    
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 5px;
+    }
+    
+    .container {
+      margin: 5px auto;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .menu-bar {
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .dropdown {
+        margin-bottom: 5px;
+    }
+    
+    .title {
+        margin: 5px 0;
+    }
+    
+    .search-bar {
+        margin: 5px 0;
+        max-width: 100%;
+    }
+  }
+
+  /* For very narrow screens */
+  @media (max-width: 359px) {
+    .menu-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .dropdown, .title, .search-bar {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .search-bar {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    
+    .search-bar input {
+        width: calc(100% - 40px); /* Leave space for the button */
+    }
+  }
